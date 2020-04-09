@@ -1,0 +1,203 @@
+
+npm install moment-timezone
+
+const moment = require('moment-timezone');
+const dateThailand = moment.tz(Date.now(), "Asia/Bangkok");
+
+console.log(dateThailand); // "2018-08-20T16:35:14.033+07:00"
+*** Asia/Bangkok +07:00
+
+
+const categorySchema = new Schema(
+    {
+        _id: {type: mongoose.Schema.Types.ObjectId, auto: true},
+        c_name: String,
+        created_by: String,
+        created_date: {type: Date, default: dateThailand},
+        updated_by: String,
+        updated_date: {type: Date, default: dateThailand}
+    }, {_id: false}
+);
+
+
+//ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head to check cpu and mem usage
+
+var signup=false;
+    let no = req.body.email.indexOf("@")+1;
+    let lenstr=req.body.email.length;
+    var domain = req.body.email.slice(no, lenstr);
+    console.log(domain+' '+lenstr+' '+no);
+    let allowedDomain=['gmail.com','yahoo.com','icloud.com','outlook.com','ymail.com','rediffmail.com'];
+    for(i=0;i<allowedDomain.length;i++){
+        if(domain==allowedDomain[i]){
+          signup=true;
+          break;
+        }
+        console.log(allowedDomain[i])
+      
+    }  
+    if(signup!=true){
+      errors.push({ text: 'Email with this domain is not allowed' });
+      console.log('Email with this id is not allowed');
+    }
+
+
+
+/*otp generator
+function newotp(){
+
+}*/
+
+
+    //update profile pic
+        // if (req.files.profilepic) {
+        //   var no = req.body.email.indexOf("@");
+        //   var userName = req.body.email.slice(0, no);
+        //   var file = req.files.profilepic,
+        //     name = userName + "-" + Date.now() + "-" + file.name.slice(-7),
+        //     type = file.mimetype;
+        //   console.log(name + "    " + type);
+        //   newUser.dpdet.name = name;
+        //   newUser.dpdet.mimetype = type;
+        //   var uploadpath = uppath + name;
+        //   file.mv(uploadpath, function(err) {
+        //     if (err) {
+        //       console.log("File Upload Failed", name, err);
+        //     } else {
+        //       console.log("File Uploaded", name);
+        //     }
+        //   });
+        // }
+/*postSave: (req, res) => {
+    var no = req.user.email.indexOf("@");
+    var userName = req.user.email.slice(0, no);
+    const newEntry = new dailyEntry({
+      email: req.user.email,
+      topic: req.body.topic,
+      entry: req.body.entry,
+    });
+    if (req.files.profilepic) {
+      var file = req.files.profilepic;
+      var name = userName + "-" + Date.now() + "-" + "0" + file.name.slice(-7);
+      var uploadpath = allimgs + name;
+      newEntry.pics = name 
+      file.mv(uploadpath, function(err) {
+        if (err) {
+          console.log("File Upload Failed", name, err);
+        } else {
+          console.log("File Uploaded", name);
+        }
+      });
+      if (req.files.imge1) {
+        var file = req.files.imge1;
+        var name =
+          userName + "-" + Date.now() + "-" + "1" + file.name.slice(-7);
+        var uploadpath = allimgs + name;
+        file.mv(uploadpath, function(err) {
+          if (err) {
+            console.log("File Upload Failed", name, err);
+          } else {
+            console.log("File Uploaded", name);
+            newEntry.pics.push(filename);
+            newEntry.pics.push({ name: name });
+          }
+        });
+      }
+      if (req.files.imge2) {
+        var file = req.files.imge2;
+        var name =
+          userName + "-" + Date.now() + "-" + "2" + file.name.slice(-7);
+        var uploadpath = allimgs + name;
+        var filename = { name: name };
+
+        file.mv(uploadpath, function(err) {
+          if (err) {
+            console.log("File Upload Failed", name, err);
+          } else {
+            console.log("File Uploaded", name);
+            newEntry.pics.push(filename);
+            newEntry.pics.push({ name: name });
+          }
+        });
+      }
+    }
+
+    newEntry.save().then(user => {
+      console.log(`memo saved`);
+      res.redirect("/entrysaved");
+    });
+  },
+*/
+/*
+show: (req, res) => {
+    let errors = [];
+    let currentUser = req.user;
+    let thisUser = req.user;
+    var date = new Date(req.body.doe);
+    var nextdate = new Date(req.body.doe);
+    var allentries = [];
+    dailyEntry
+      .find({
+        $query: {
+          email: req.user.email,
+          entryDate: { $gt: date, $lt: nextdate },
+        },
+        $project: { topic: 1, entryDate: 1 },
+      })
+      .sort({ entryDate: 1 })
+      .then(dayentry => {
+        allentries = dayentry;
+      });
+    nextdate.setDate(date.getDate() + 1);
+    dailyEntry
+      .findOne({
+        $query: {
+          email: req.user.email,
+          entryDate: { $gt: date, $lt: nextdate },
+        },
+      })
+      .sort({ entryDate: -1 })
+      .then(foundEntry => {
+        if (foundEntry == null) {
+          currentUser = { name: "" };
+          let alldata = {
+            topic: "Nothing to display",
+            entry: "",
+            pics: "imagenotfound.png",
+            entryDate: req.body.doe,
+          };
+          errors.push({ text: "No entry found on selected date" });
+          res.render("show", {
+            errors,
+            currentUser,
+            thisUser,
+            alldata,
+            allentries,
+            link,
+          });
+        } else {
+          let alldata = foundEntry;
+          errors.push({ text: "Logged in as" });
+          res.render("show", {
+            errors,
+            currentUser,
+            thisUser,
+            alldata,
+            allentries,
+            link,
+          });
+        }
+      });
+  },*/ 
+
+
+ /* saved: (req, res) => {
+    let errors = [];
+    let currentUser = [];
+    let thisUser = req.user;
+    errors.push({ text: "Entry saved" });
+    currentUser.push({ name: "." });
+    res.render("main", { errors, currentUser, thisUser, link });
+  },
+
+

@@ -1,0 +1,328 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.noty-message {
+  width: 100px;
+  height: 300px !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Styles for bot */
+.chat-container {
+  position: fixed;
+  display: none;
+  width: 350px;
+  right: 35px;
+  height: 80%;
+  bottom: 90px;
+  background-color: white;
+  z-index: 9999 !important;
+  /* border-radius: 10px; */
+  box-shadow: rgba(0, 0, 0, 0.041) 0 0 10px 7px,
+    rgba(46, 45, 45, 0.041) 0 0 10px 7px;
+  overflow-y: auto;
+}
+
+#mainBtn {
+  padding-left: 22px;
+  padding-right: 22px;
+  position: fixed;
+  right: 35px;
+  bottom: 20px;
+  /* border-radius: 22px; */
+  width: auto;
+  font-size: 18px;
+  font-weight: 500;
+  animation: btnOnLoad 1s;
+  transition: all 1s ease-in;
+  z-index: 99 !important;
+}
+
+.btn {
+  border-radius: 10px !important;
+}
+
+#mainBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.082) 0 0 10px 7px;
+}
+
+/* For website send fields */
+.msg-send {
+  position: fixed;
+  bottom: 90px;
+  width: 350px;
+  z-index: 9999999;
+  background-color: white;
+}
+
+/* For client bots */
+.msg-send2 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999999;
+  background-color: white;
+}
+
+.msg-bot {
+  max-width: 70%;
+  width: auto;
+  margin-left: 10%;
+  border-radius: 17px;
+  height: auto;
+  background-color: #e9ecef;
+  padding: 0.5rem 1rem;
+  word-wrap: break-word;
+}
+
+.msg-bot1 {
+  max-width: 70%;
+  width: auto;
+  margin-left: 10%;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  height: auto;
+  background-color: #e9ecef;
+  padding: 0.5rem 1rem;
+  word-wrap: break-word;
+}
+
+.server-btn-response {
+  max-width: 70%;
+  width: auto;
+  margin-left: 10%;
+  padding: 0.5rem 0.95rem;
+  word-wrap: break-word;
+  border: 1px solid #e9ecef;
+  border-top: 0;
+}
+
+.server-btn-response-last {
+  max-width: 70%;
+  width: auto;
+  margin-left: 10%;
+  padding: 0.5rem 0.95rem;
+  word-wrap: break-word;
+  border: 1px solid #e9ecef;
+  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 17px;
+  border-top: 0;
+}
+
+.server-btn-response,
+.server-btn-response-last:hover {
+  cursor: pointer;
+}
+
+.msg-user {
+  max-width: 70%;
+  width: auto;
+  margin-right: 10%;
+  border-radius: 17px;
+  height: auto;
+  color: white;
+  padding: 0.5rem 1rem;
+  word-wrap: break-word;
+  background-color: #007bff !important;
+}
+
+.close-btn {
+  padding-right: 3%;
+  padding-top: 3%;
+  font-size: 25px;
+  font-weight: 100 !important;
+  color: rgba(0, 0, 0, 0.514);
+  display: none !important;
+  width: 100%;
+  background-color: white;
+}
+
+.msg-container {
+  margin-bottom: 50px;
+}
+
+/* .MuiGrid-container {
+  width: auto !important;
+} */
+
+#message {
+  color: black !important;
+}
+
+#message + .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.23) !important;
+}
+
+#userDetails .MuiFormLabel-root {
+  color: black !important;
+}
+
+#userDetails {
+  color: black !important;
+}
+
+#userDetails .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.23) !important;
+}
+
+#userDetails .MuiInputBase-input {
+  color: black;
+}
+
+.msg-send > div > .MuiFormLabel-root {
+  color: black !important;
+}
+
+.MuiButton-root {
+  border-radius: 0px !important;
+}
+
+.MuiCardMedia-img {
+  object-fit: fill !important;
+}
+
+.bot-container-pallet {
+  width: 100%;
+  height: 70px;
+  background-color: #3963ae;
+  color: white;
+  position: fixed;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 1.25rem;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.close-icon {
+  margin-left: auto;
+  margin-right: 40px;
+  border: 1px solid;
+  border-radius: 20px;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+}
+
+.btn1 {
+  border: 1px solid #c9cdd4;
+  color: #3963ae;
+  background-color: transparent;
+  width: 50%;
+}
+
+.btn-main {
+  border-radius: 40px;
+  padding: 20px 30px;
+  font-size: 1.5rem;
+}
+
+.btn-price {
+  border-radius: 5px;
+  padding: 10px;
+  width: 95%;
+  margin-bottom: 5px;
+}
+
+.main-price {
+  font-weight: 650;
+  font-size: 1.5rem;
+}
+
+.price-time {
+  color: #00000082;
+  font-weight: 600;
+}
+
+.btn1:hover {
+  cursor: pointer;
+  background-color: #3963ae;
+  color: white;
+}
+
+.green-color {
+  color: #02b0b4;
+}
+
+.grey-color {
+  color: #676767;
+}
+
+.price-heading {
+  background-color: #8a828233;
+  font-weight: 800;
+  padding: 10px 0;
+}
+
+.blue-color {
+  color: #3963ae;
+}
+
+@keyframes mainDialogues {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.card-Image {
+  width: 100%;
+  height: 120px;
+}
+
+@keyframes btnOnLoad {
+  0% {
+    font-size: 0px;
+    opacity: 0;
+  }
+  100% {
+    font-size: 18px;
+    opacity: 1;
+  }
+}
+
+@keyframes chatConatinerShow {
+  0% {
+    opacity: 0;
+    bottom: 70px;
+  }
+  100% {
+    bottom: 90px;
+    opacity: 1;
+  }
+}
+
+@keyframes chatContainerHide {
+  0% {
+    bottom: 90px;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    bottom: 70px;
+  }
+  100% {
+    /* display: none; */
+  }
+}
