@@ -14,23 +14,22 @@ Make sure you make required changes for the following configuration:
 
 ## Running Locally
 
-```sh
+```
+To start react website 
 $ git clone https://github.com/ashit1303/Diary.git # or clone your own fork
-$ cd Dairy
+$ cd Bot/client/
+$ npm install
+$ npm start
+```
+Your website should be running on http://localhost:3000/
+
+
+```
+To start node js rest api
+$ cd Bot
 $ npm install
 $ npm start
 
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Documentation
-
-For more information about using this APP, refer these Links:
-
-- [EJS for frontend](https://ejs.co)
-- [Mongoose to connect to mongodb](https://www.npmjs.com/package/mongoose)
-- [NodeMailer for emailing](https://nodemailer.com)
-- [Passport for authentication](http://www.passportjs.org/)
-- [Express-session for session management](https://www.npmjs.com/package/express-session)
-- [Node-cron for job automation](https://www.npmjs.com/package/node-cron)
+Your rest api should now be running on [localhost:5000](http://localhost:5000/).
