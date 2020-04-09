@@ -1,4 +1,4 @@
-# SABUTILS DIARY    
+# BotEra  
 
 A project based on Node.js app using [Express](http://expressjs.com/).
 
