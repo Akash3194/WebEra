@@ -16,7 +16,7 @@ Make sure you make required changes for the following configuration:
 
 ```
 To start react website 
-$ git clone https://github.com/ashit1303/Diary.git # or clone your own fork
+$ git clone https://github.com/Akash3194/WebEra.git # or clone your own fork
 $ cd Bot/client/
 $ npm install
 $ npm start
